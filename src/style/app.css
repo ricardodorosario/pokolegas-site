@@ -15,7 +15,10 @@ body {
 }
 
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-header {
@@ -25,11 +28,82 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(20px + 2vmin);
+  font-family: "Sansation";
   color: white;
+  width: 100%;
+}
+section {
+  width: 80%;
+  max-height: 400px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+section:nth-child(2) {
+  width: 100% !important;
+  max-height: 800px;
+}
+
+section:nth-child(n + 3) {
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+section:nth-child(n + 3) > .App-img-section {
+  transition: transform 0.2s;
+}
+section:nth-child(n + 3) > .App-img-section:hover {
+  background-color: wheat;
+  transform: scale(1.05);
+}
+
+.App-img-section {
+  width: 100%;
 }
 
 .App-logo {
   height: 80px;
   pointer-events: none;
+}
+
+.App-footer {
+  background-color: #f96527;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 2vmin);
+  font-family: "Sansation";
+  color: white;
+  width: 100%;
+}
+
+.social-panel {
+  display: flex;
+  position: fixed;
+  background-color: #111c;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+
+  animation: grow 0.2s ease;
+  z-index: 1000;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
